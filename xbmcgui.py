@@ -1626,20 +1626,6 @@ class WindowXML(Window):
         """Returns the number of items in this Window List."""
         return int()
 
-    def setProperty(self, strProperty, strValue):
-        """Sets a container property, similar to an infolabel.
-
-        :param strProperty: string - property name.
-        :param strValue: string or unicode - value of property.
-
-        .. note:: ``strProperty`` is NOT case sensitive.
-
-        Example::
-
-            self.setProperty('Category', 'Newest')
-        """
-        pass
-
 
 # noinspection PyPep8Naming
 class WindowXMLDialog(WindowXML):
@@ -1696,10 +1682,18 @@ class Control(object):
     TODO: This later solution should be implemented for future scripting languages
     while the former will remain as deprecated functionality for Python.
     """
-    def addItem(self):
+    def addItem(self, item):
+        """Add a new item to this list control.
+
+        :param item: string, unicode or ListItem - item to add.
+        """
         pass
 
-    def addItems(self):
+    def addItems(self, items):
+        """Adds a list of listitems or strings to this list control.
+
+        :param items: List - list of strings, unicode objects or ListItems to add.
+        """
         pass
 
     def canAcceptMessages(self):
@@ -2319,20 +2313,6 @@ class ControlList(Control):
                  buttonFocusTexture=None, selectedColor=None, _imageWidth=10, _imageHeight=10,
                  _itemTextXOffset=10, _itemTextYOffset=2,
                  _itemHeight=27, _space=2, _alignmentY=4):
-        pass
-
-    def addItem(self, item):
-        """Add a new item to this list control.
-
-        :param item: string, unicode or ListItem - item to add.
-        """
-        pass
-
-    def addItems(self, items):
-        """Adds a list of listitems or strings to this list control.
-
-        :param items: List - list of strings, unicode objects or ListItems to add.
-        """
         pass
 
     def selectItem(self, item):
