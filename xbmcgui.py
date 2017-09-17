@@ -1576,7 +1576,6 @@ class WindowXML(Window):
 
     def __init__(self, xmlFilename, scriptPath, defaultSkin='Default', defaultRes='720p'):
         super(WindowXML, self).__init__()
-        pass
 
     def removeItem(self, position):
         """Removes a specified item based on position, from the Window List.
