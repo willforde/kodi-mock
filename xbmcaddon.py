@@ -182,11 +182,7 @@ class Addon(object):
 
             self.Addon.setSettingBool(id='enabled', value=True)
         """
-        if isinstance(value, bool):
-            self.setSetting(id, str(value).lower())
-            return True
-        else:
-            return False
+        return self.setSetting(id, str(value).lower()) if isinstance(value, bool) else False
 
     def setSettingInt(self, id, value):
         """
@@ -204,11 +200,7 @@ class Addon(object):
 
             self.Addon.setSettingInt(id='max', value=5)
         """
-        if isinstance(value, int):
-            self.setSetting(id, str(value))
-            return True
-        else:
-            return False
+        return self.setSettingString(id, value) if isinstance(value, int) else False
 
     def setSettingNumber(self, id, value):
         """
@@ -227,11 +219,7 @@ class Addon(object):
 
             self.Addon.setSettingNumber(id='max', value=5.5)
         """
-        if isinstance(value, float):
-            self.setSetting(id, str(value))
-            return True
-        else:
-            return False
+        return self.setSettingString(id, value) if isinstance(value, float) else False
 
     def setSettingString(self, id, value):
         """
@@ -239,7 +227,6 @@ class Addon(object):
 
         :param str id: string - id of the setting that the module needs to access.
         :param value: string or unicode - value of the setting.
-        :type value: str or unicode
 
         :returns: True if the value of the setting was set, false otherwise
         :rtype: bool
@@ -250,5 +237,4 @@ class Addon(object):
 
             self.Addon.setSettingString(id='username', value='teamkodi')
         """
-        self._data.settings[id] = ensure_unicode(value)
-        return True
+        return self.setSetting(id, ensure_unicode(value))
