@@ -59,7 +59,7 @@ SORT_METHOD_VIDEO_TITLE = 25
 SORT_METHOD_VIDEO_YEAR = 18
 
 
-# noinspection PyUnusedLocal, PyTypeChecker
+# noinspection PyUnusedLocal, PyPep8Naming
 def addDirectoryItem(handle, url, listitem, isFolder=False, totalItems=0):
     """
     Callback function to pass directory contents back to XBMC.
@@ -85,7 +85,7 @@ def addDirectoryItem(handle, url, listitem, isFolder=False, totalItems=0):
     return True
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def addDirectoryItems(handle, items, totalItems=0):
     """
     Callback function to pass directory contents back to XBMC as a list.
@@ -115,7 +115,7 @@ def addDirectoryItems(handle, items, totalItems=0):
     return True
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def addSortMethod(handle, sortMethod, label2Mask=""):
     """
     Adds a sorting method for the media list.
@@ -187,7 +187,7 @@ def addSortMethod(handle, sortMethod, label2Mask=""):
     plugin_data["sortmethods"].append(sortMethod)
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def endOfDirectory(handle, succeeded=True, updateListing=False, cacheToDisc=True):
     """
     Callback function to tell XBMC that the end of the directory listing in a virtualPythonFolder module is reached.
@@ -207,7 +207,7 @@ def endOfDirectory(handle, succeeded=True, updateListing=False, cacheToDisc=True
     plugin_data["updatelisting"] = updateListing
 
 
-# noinspection PyUnusedLocal
+# noinspection PyShadowingBuiltins, PyUnusedLocal, PyPep8Naming
 def getSetting(handle, id):
     """
     Returns the value of a setting as a string.
@@ -225,7 +225,7 @@ def getSetting(handle, id):
     return str()
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def setContent(handle, content):
     """
     Sets the plugins content type.
@@ -245,7 +245,7 @@ def setContent(handle, content):
     plugin_data["contenttype"] = ensure_unicode(content)
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def setPluginCategory(handle, category):
     """
     Sets the plugins name for skins to display.
@@ -261,7 +261,7 @@ def setPluginCategory(handle, category):
     plugin_data["category"] = ensure_unicode(category)
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def setPluginFanart(handle, image=None, color1=None, color2=None, color3=None):
     """
     Sets the plugins fanart and color for skins to display.
@@ -280,7 +280,7 @@ def setPluginFanart(handle, image=None, color1=None, color2=None, color3=None):
     pass
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def setProperty(handle, key, value):
     """
     Sets a container property for this plugin.
@@ -300,7 +300,7 @@ def setProperty(handle, key, value):
     pass
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def setResolvedUrl(handle, succeeded, listitem):
     """
     Callback function to tell Kodi that the file plugin has been resolved to a url
@@ -317,7 +317,7 @@ def setResolvedUrl(handle, succeeded, listitem):
     plugin_data["succeeded"] = succeeded
 
 
-# noinspection PyUnusedLocal
+# noinspection PyShadowingBuiltins, PyUnusedLocal, PyPep8Naming
 def setSetting(handle, id, value):
     """
     Sets a plugin setting for the current running plugin.

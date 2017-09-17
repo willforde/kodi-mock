@@ -37,7 +37,7 @@ def copy(source, destination):
         return True
 
 
-# noinspection PyShadowingBuiltins
+# noinspection PyShadowingBuiltins, PyPep8Naming
 def deleteFile(file):
     """
     Delete the file
@@ -141,7 +141,7 @@ def mkdirs(path):
         return True
 
 
-# noinspection PyShadowingBuiltins
+# noinspection PyShadowingBuiltins, PyPep8Naming
 def rename(file, newFile):
     """
     Rename a file
@@ -186,7 +186,7 @@ def rmdir(path):
         return True
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyShadowingBuiltins
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyShadowingBuiltins, PyPep8Naming
 class File(object):
     """
     File(filepath, mode=None)

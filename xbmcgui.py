@@ -325,7 +325,7 @@ REMOTE_8 = 66
 REMOTE_9 = 67
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class ListItem(dict):
     """
     The list item control is used for creating item lists in Kodi
@@ -703,7 +703,7 @@ class ListItem(dict):
         self["selected"] = selected
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyShadowingBuiltins
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyShadowingBuiltins, PyPep8Naming
 class Dialog(object):
     """
     The graphical control element dialog box (also called dialogue box or just dialog)
@@ -1228,7 +1228,7 @@ class DialogProgressBG(object):
             self._finished = True
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class Window(object):
     """
     Window(existingWindowId=-1)
@@ -1552,7 +1552,7 @@ class WindowDialog(Window):
     pass
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class WindowXML(Window):
     """
     WindowXML(xmlFilename, scriptPath, defaultSkin='Default', defaultRes='720p')
@@ -1641,6 +1641,7 @@ class WindowXML(Window):
         pass
 
 
+# noinspection PyPep8Naming
 class WindowXMLDialog(WindowXML):
     """
     WindowXMLDialog(xmlFilename, scriptPath, defaultSkin='Default', defaultRes='720p')
@@ -1665,7 +1666,7 @@ class WindowXMLDialog(WindowXML):
         super(WindowXMLDialog, self).__init__(xmlFilename, scriptPath, defaultSkin, defaultRes)
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class Control(object):
     """
     Parent for control classes.
@@ -1959,7 +1960,7 @@ class Control(object):
         pass
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class ControlLabel(Control):
     """
     ControlLabel(x, y, width, height, label, font=None, textColor=None, disabledColor=None,
@@ -2013,7 +2014,7 @@ class ControlLabel(Control):
         return unicode_type()
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class ControlFadeLabel(Control):
     """
     ControlFadeLabel(x, y, width, height, font=None, textColor=None, _alignment=0)
@@ -2051,7 +2052,7 @@ class ControlFadeLabel(Control):
         pass
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class ControlTextBox(Control):
 
     """
@@ -2110,6 +2111,7 @@ class ControlTextBox(Control):
         """
         pass
 
+    # noinspection PyShadowingBuiltins
     def scroll(self, id):
         """Scrolls to the given position.
 
@@ -2122,7 +2124,7 @@ class ControlTextBox(Control):
         pass
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class ControlButton(Control):
     """
     ControlButton(x, y, width, height, label, focusTexture=None, noFocusTexture=None,
@@ -2201,7 +2203,7 @@ class ControlButton(Control):
         return unicode_type()
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class ControlCheckMark(Control):
 
     """
@@ -2276,7 +2278,7 @@ class ControlCheckMark(Control):
         pass
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyMethodOverriding
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyMethodOverriding, PyPep8Naming
 class ControlList(Control):
 
     """
@@ -2438,7 +2440,7 @@ class ControlList(Control):
         pass
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class ControlImage(Control):
     """
     ControlImage(x, y, width, height, filename, aspectRatio=0, colorDiffuse=None)
@@ -2482,7 +2484,7 @@ class ControlImage(Control):
         pass
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class ControlProgress(Control):
 
     """
@@ -2533,7 +2535,7 @@ class ControlProgress(Control):
         return float()
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class ControlSlider(Control):
     """
     ControlSlider(x, y, width, height, textureback=None, texture=None, texturefocus=None)
@@ -2595,7 +2597,7 @@ class ControlGroup(Control):
         pass
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class ControlEdit(Control):
 
     """
@@ -2684,7 +2686,7 @@ class ControlEdit(Control):
         pass
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class ControlRadioButton(Control):
 
     """
@@ -2770,7 +2772,6 @@ class ControlRadioButton(Control):
         pass
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
 class ControlSpin(Control):
     """
     ControlSpin class.
@@ -2780,6 +2781,7 @@ class ControlSpin(Control):
     you can't create this object, it is returned by objects likeControlTextBox andControlList.
     """
 
+    # noinspection PyUnusedLocal, PyPep8Naming
     def setTextures(self, up, down, upFocus, downFocus):
         """
         setTextures(up, down, upFocus, downFocus)--Set's textures for this control.
@@ -2789,7 +2791,7 @@ class ControlSpin(Control):
         pass
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class Action(object):
     """Action class.
 
@@ -2819,6 +2821,7 @@ class Action(object):
         return float()
 
 
+# noinspection PyPep8Naming
 def getCurrentWindowId():
     """
     Returns the id for the current 'active' window as an integer.
@@ -2830,6 +2833,7 @@ def getCurrentWindowId():
     return long_type()
 
 
+# noinspection PyPep8Naming
 def getCurrentWindowDialogId():
     """
     Returns the id for the current 'active' dialog as an integer.

@@ -14,7 +14,7 @@ __platform__ = 'ALL'
 __version__ = '2.25.0'
 
 
-# noinspection PyShadowingBuiltins
+# noinspection PyShadowingBuiltins, PyPep8Naming
 class Addon(object):
     """
     Addon(id=None)

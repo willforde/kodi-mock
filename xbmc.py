@@ -69,6 +69,7 @@ log_levels = (logging.DEBUG,  # xbmc.LOGDEBUG
               logging.DEBUG)  # xbmc.LOGNONE
 
 
+# noinspection PyPep8Naming
 def audioResume():
     """
     Resume Audio engine.
@@ -80,6 +81,7 @@ def audioResume():
     pass
 
 
+# noinspection PyPep8Naming
 def audioSuspend():
     """
     Suspend Audio engine.
@@ -91,7 +93,7 @@ def audioSuspend():
     pass
 
 
-# noinspection PyUnusedLocal, PyShadowingBuiltins
+# noinspection PyUnusedLocal, PyShadowingBuiltins, PyPep8Naming
 def convertLanguage(language, format):
     """
     Returns the given language converted to the given format as a string.
@@ -114,7 +116,7 @@ def convertLanguage(language, format):
     raise NotImplementedError
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal,PyPep8Naming
 def enableNavSounds(yesNo):
     """
     Enables/Disables nav sounds
@@ -144,7 +146,7 @@ def executebuiltin(function):
     pass
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def executeJSONRPC(jsonrpccommand):
     """
     Execute an JSONRPC command.
@@ -176,7 +178,7 @@ def executescript(script):
     pass
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def getCacheThumbName(path):
     """
     Get thumb cache filename.
@@ -194,6 +196,7 @@ def getCacheThumbName(path):
     raise NotImplementedError
 
 
+# noinspection PyPep8Naming
 def getCleanMovieTitle(path, usefoldername=False):
     """
     Get clean movie title and year string if available.
@@ -227,7 +230,7 @@ def getCleanMovieTitle(path, usefoldername=False):
     return title.rsplit(".", 1)[0].strip(), year
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def getCondVisibility(condition):
     """
     Get visibility conditions.
@@ -248,6 +251,7 @@ def getCondVisibility(condition):
     raise NotImplementedError
 
 
+# noinspection PyPep8Naming
 def getDVDState():
     """
     Get the dvd state as an integer.
@@ -269,6 +273,7 @@ def getDVDState():
     return TRAY_CLOSED_NO_MEDIA
 
 
+# noinspection PyPep8Naming
 def getFreeMem():
     """
     Get amount of free memory in MB.
@@ -283,6 +288,7 @@ def getFreeMem():
     return 1024
 
 
+# noinspection PyPep8Naming
 def getGlobalIdleTime():
     """
     Get the elapsed idle time in seconds.
@@ -297,7 +303,7 @@ def getGlobalIdleTime():
     return long_type()
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def getInfoImage(infotag):
     """
     Get filename including path to the InfoImage's thumbnail.
@@ -315,7 +321,7 @@ def getInfoImage(infotag):
     raise NotImplementedError
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def getInfoLabel(cLine):
     """
     Get a info label.
@@ -333,6 +339,7 @@ def getInfoLabel(cLine):
     raise NotImplementedError
 
 
+# noinspection PyPep8Naming
 def getIPAddress():
     """
     Get the current ip address.
@@ -347,7 +354,7 @@ def getIPAddress():
     return "127.0.0.1"
 
 
-# noinspection PyUnusedLocal, PyShadowingBuiltins
+# noinspection PyUnusedLocal, PyShadowingBuiltins, PyPep8Naming
 def getLanguage(format=ENGLISH_NAME, region=False):
     """
     Get the active language.
@@ -381,6 +388,7 @@ def getLanguage(format=ENGLISH_NAME, region=False):
         return lang
 
 
+# noinspection PyShadowingBuiltins, PyPep8Naming
 def getLocalizedString(id):
     """
     Returns an addon's localize 'unicode string'.
@@ -399,7 +407,7 @@ def getLocalizedString(id):
     return string.decode("utf8") if isinstance(string, bytes) else string
 
 
-# noinspection PyShadowingBuiltins
+# noinspection PyShadowingBuiltins, PyPep8Naming
 def getRegion(id):
     """
     Returns your regions setting as a string for the specified id.
@@ -420,6 +428,7 @@ def getRegion(id):
     return region_settings[id]
 
 
+# noinspection PyPep8Naming
 def getSkinDir():
     """
     Get the active skin directory.
@@ -436,6 +445,7 @@ def getSkinDir():
     return "skin.estuary"
 
 
+# noinspection PyPep8Naming
 def getSupportedMedia(mediaType):
     """
     Get the supported file types for the specific media.
@@ -457,6 +467,7 @@ def getSupportedMedia(mediaType):
     return supported_media[mediaType]
 
 
+# noinspection PyPep8Naming
 def getUserAgent():
     """
     Returns Kodi's HTTP UserAgent string
@@ -501,6 +512,7 @@ def log(msg, level=LOGDEBUG):
     logger.log(log_levels[level], msg)
 
 
+# noinspection PyPep8Naming
 def makeLegalFilename(filename, fatX=True):
     """
     Returns a legal filename or path as a string.
@@ -531,7 +543,7 @@ def makeLegalFilename(filename, fatX=True):
         return normalize_filename(filename)
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def playSFX(filename, useCached=True):
     """
     Plays a wav file by filename.
@@ -569,7 +581,7 @@ def shutdown():
     pass
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def skinHasImage(image):
     """
     Check skin for presence of Image.
@@ -611,7 +623,7 @@ def sleep(timemillis):
         raise TypeError("Time intervile of type '%s' is not of valid type int" % type(timemillis))
 
 
-# noinspection PyUnusedLocal
+# noinspection PyUnusedLocal, PyPep8Naming
 def startServer(iTyp, bStart, bWait=False):
     """
     start or stop a server.
@@ -630,6 +642,7 @@ def startServer(iTyp, bStart, bWait=False):
     pass
 
 
+# noinspection PyPep8Naming
 def stopSFX():
     """
     Stops wav file.
@@ -641,6 +654,7 @@ def stopSFX():
     pass
 
 
+# noinspection PyPep8Naming
 def translatePath(path):
     """
     Returns the translated path.
@@ -677,6 +691,7 @@ def translatePath(path):
         return os.path.join(realpath, *path.split("/"))
 
 
+# noinspection PyPep8Naming
 def validatePath(path):
     """
     Returns the validated path.
@@ -699,7 +714,7 @@ def validatePath(path):
     return path.replace(alt_sep, os.sep)
 
 
-# noinspection PyMethodMayBeStatic, PyUnusedLocal
+# noinspection PyMethodMayBeStatic, PyUnusedLocal, PyPep8Naming
 class Keyboard(object):
     """
     Creates a new Keyboard object with default text heading and hidden input flag if supplied.
@@ -809,7 +824,7 @@ class Keyboard(object):
         return self._confirmed
 
 
-# noinspection PyMethodMayBeStatic, PyUnusedLocal
+# noinspection PyMethodMayBeStatic, PyUnusedLocal, PyPep8Naming
 class Player(object):
     """
     Player()
@@ -1131,7 +1146,7 @@ class Player(object):
         pass
 
 
-# noinspection PyUnusedLocal, PyMethodMayBeStatic
+# noinspection PyUnusedLocal, PyMethodMayBeStatic, PyPep8Naming
 class PlayList(object):
     """Retrieve a reference from a valid xbmc playlist
 
@@ -1243,7 +1258,7 @@ class PlayList(object):
         return 0
 
 
-# noinspection PyMethodMayBeStatic, PyUnusedLocal
+# noinspection PyMethodMayBeStatic, PyUnusedLocal, PyPep8Naming
 class InfoTagMusic(object):
     """
     To get music info tag data of currently played source.
@@ -1435,7 +1450,7 @@ class InfoTagMusic(object):
         return int()
 
 
-# noinspection PyMethodMayBeStatic, PyUnusedLocal
+# noinspection PyMethodMayBeStatic, PyUnusedLocal, PyPep8Naming
 class InfoTagVideo(object):
     """
     To get video info tag data of currently played source.
@@ -1703,7 +1718,7 @@ class InfoTagVideo(object):
         return int()
 
 
-# noinspection PyMethodMayBeStatic, PyUnusedLocal
+# noinspection PyMethodMayBeStatic, PyUnusedLocal, PyPep8Naming
 class InfoTagRadioRDS(object):
     """
     To get radio RDS info tag data of currently played PVR radio channel source.
@@ -1980,7 +1995,7 @@ class InfoTagRadioRDS(object):
         return str()
 
 
-# noinspection PyMethodMayBeStatic, PyUnusedLocal
+# noinspection PyMethodMayBeStatic, PyUnusedLocal, PyPep8Naming
 class Monitor(object):
     """
     Monitor class.
@@ -2122,7 +2137,7 @@ class Monitor(object):
         return bool(0)
 
 
-# noinspection PyMethodMayBeStatic, PyUnusedLocal
+# noinspection PyMethodMayBeStatic, PyUnusedLocal, PyPep8Naming
 class RenderCapture(object):
     """Kodi's render capture."""
 
