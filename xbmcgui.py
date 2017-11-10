@@ -712,6 +712,7 @@ class Dialog(object):
     The graphical control element dialog box (also called dialogue box or just dialog)
     is a small window that communicates information to the user and prompts them for a response.
     """
+    mock_data = {"select": []}
 
     def browse(self, type, heading, shares, mask='', useThumbs=False, treatAsFolder=False,
                defaultt='', enableMultiple=False):
@@ -1078,6 +1079,9 @@ class Dialog(object):
             dialog = xbmcgui.Dialog()
             ret = dialog.select('Choose a playlist', ['Playlist #1', 'Playlist #2, 'Playlist #3'])
         """
+        if self.mock_data["select"]:
+            return int(self.mock_data["select"].pop(0))
+
         print("#################")
         print("Select Dialog: %s" % heading)
         print("#################")
