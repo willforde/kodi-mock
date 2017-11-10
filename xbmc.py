@@ -733,6 +733,7 @@ class Keyboard(object):
         if (kb.isConfirmed()):
             text = kb.getText()
     """
+    mock_data = []
 
     def __init__(self, default="", heading="", hidden=False):
         self._heading = heading
@@ -756,9 +757,12 @@ class Keyboard(object):
             kb.doModal(30000)
         """
         self._confirmed = True
-        dialog = _xbmcgui.Dialog()
-        self._input = dialog.input(self._heading, self._default,
-                                   option=_xbmcgui.ALPHANUM_HIDE_INPUT if self._hidden else 0)
+        if self.mock_data:
+            self._input = self.mock_data.pop(0)
+        else:
+            dialog = _xbmcgui.Dialog()
+            self._input = dialog.input(self._heading, self._default,
+                                       option=_xbmcgui.ALPHANUM_HIDE_INPUT if self._hidden else 0)
 
     def setDefault(self, default):
         """
