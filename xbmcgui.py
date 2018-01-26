@@ -604,6 +604,15 @@ class ListItem(dict):
         """
         self["path"] = ensure_unicode(path)
 
+    def getPath(self):
+        """
+        Returns the path of this listitem.
+
+        :returns: Path of this listitem
+        :rtype: str
+        """
+        return ensure_native_str(self["path"])
+
     def setArt(self, dictionary):
         """
         Sets the listitem's art
