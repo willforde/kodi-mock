@@ -1179,7 +1179,7 @@ class PlayList(object):
         """x.__len__() <==> len(x)"""
         return len(plugin_data["playlist"])
 
-    def add(self, url, listitem=None, index=-1):
+    def add(self, url, listitem=None, index=None):
         """Adds a new file to the playlist.
 
         :type url: str or unicode
@@ -1199,12 +1199,12 @@ class PlayList(object):
             listitem = _xbmcgui.ListItem()
         listitem.setPath(url)
 
-        if index:
-            self.playlistItems.insert(index, listitem)
-            plugin_data["playlist"].insert(index, listitem)
-        else:
+        if index is None:
             self.playlistItems.append(listitem)
             plugin_data["playlist"].append(listitem)
+        else:
+            self.playlistItems.insert(index, listitem)
+            plugin_data["playlist"].insert(index, listitem)
 
     def load(self, filename):
         """

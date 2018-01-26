@@ -7,7 +7,7 @@ from __future__ import print_function
 import warnings
 
 # Package imports
-from addondev.support import handle_prompt
+from addondev.support import handle_prompt, data_log
 from addondev.utils import hash_password, ensure_native_str, ensure_unicode, long_type, unicode_type
 
 __author__ = 'Team Kodi <http://kodi.tv>'
@@ -973,6 +973,7 @@ class Dialog(object):
             dialog = xbmcgui.Dialog()
             dialog.notification('Movie Trailers', 'Finding Nemo download finished.', xbmcgui.NOTIFICATION_INFO, 5000)
         """
+        data_log["notifications"].append((heading, message, icon, time, sound))
         print("Notification {}: {}".format(heading, message))
 
     def yesno(self, heading, line1, line2='', line3='', nolabel='', yeslabel='', autoclose=0):
@@ -1079,7 +1080,7 @@ class Dialog(object):
             dialog = xbmcgui.Dialog()
             ret = dialog.select('Choose a playlist', ['Playlist #1', 'Playlist #2, 'Playlist #3'])
         """
-        if self.mock_data["select"]:
+        if "select" in self.mock_data:
             return int(self.mock_data["select"].pop(0))
 
         print("#################")

@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='kodimock',
-    version='0.0.1',
+    version='0.0.3',
     description='Kodi modules code auto-completion and quick help for Python IDEs.',
     keywords='kodi plugin addon cli',
     classifiers=['Development Status :: 4 - Beta',
