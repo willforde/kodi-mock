@@ -4,7 +4,7 @@ Offers classes and functions that manipulate the add-on settings, information an
 """
 
 # Package imports
-from addondev.support import avail_addons, plugin_id
+import addondev.support as _support
 from addondev.utils import ensure_native_str, ensure_unicode
 
 __author__ = 'Team Kodi <http://kodi.tv>'
@@ -12,6 +12,8 @@ __credits__ = 'Team Kodi'
 __date__ = 'Fri May 01 16:22:07 BST 2015'
 __platform__ = 'ALL'
 __version__ = '2.25.0'
+
+mock_data = {"setting": {}}
 
 
 # noinspection PyShadowingBuiltins, PyPep8Naming
@@ -33,9 +35,12 @@ class Addon(object):
         self.Addon = xbmcaddon.Addon('script.foo.bar')
     """
 
-    def __init__(self, id=plugin_id):
-        if id in avail_addons:
-            self._data = avail_addons[id]
+    def __init__(self, id=None):
+        if id is None:
+            id = _support.plugin_id
+        
+        if id in _support.avail_addons:
+            self._data = _support.avail_addons[id]
         else:
             raise RuntimeError("unknown addon id '{}'".format(id))
 
@@ -85,7 +90,10 @@ class Addon(object):
 
             apikey = self.Addon.getSetting('apikey')
         """
-        return self._data.settings[id]
+        if id in mock_data["setting"]:
+            return mock_data["setting"][id]
+        else:
+            return self._data.settings[id]
 
     def getSettingBool(self, id):
         """
