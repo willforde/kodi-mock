@@ -16,6 +16,7 @@ import re
 import xbmcgui as _xbmcgui
 from addondev.support import region_settings, supported_media, avail_addons, logger, plugin_data, kodi_paths
 from addondev.utils import ensure_native_str, long_type, normalize_filename
+from xbmcvfs import translatePath
 
 __author__ = 'Team Kodi <http://kodi.tv>'
 __credits__ = 'Team Kodi'

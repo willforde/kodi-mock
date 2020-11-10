@@ -7,7 +7,8 @@ import shutil
 import os
 
 # Other imports
-from addondev.utils import safe_path
+from addondev.utils import safe_path, kodi_paths
+from addondev.utils import ensure_native_str
 
 __author__ = 'Team Kodi <http://kodi.tv>'
 __credits__ = 'Team Kodi'
@@ -411,3 +412,40 @@ class Stat(object):
         :rtype: long
         """
         return self._stat.st_uid
+
+
+# noinspection PyPep8Naming
+def translatePath(path):
+    """
+    Returns the translated path.
+
+    :param path: string or unicode - Path to format
+    :type path: str or unicode
+
+    :returns: Translated path
+    :rtype: str
+
+    .. note: Only useful if you are coding for both Linux and Windows.
+
+    Converts ``'special://masterprofile/script_data'`` -> ``'/home/user/XBMC/UserData/script_data'`` on Linux.
+
+    List of Special protocols - http://kodi.wiki/view/Special_protocol
+
+    Example::
+
+        fpath = xbmc.translatePath('special://masterprofile/script_data')
+    """
+    path = ensure_native_str(path)
+    # Return the path unmodified if not a special path
+    if not path.startswith("special://"):
+        return path
+
+    # Extract the directory name
+    special_path, path = path.split("/", 3)[2:]
+
+    # Fetch realpath from the path mapper
+    realpath = kodi_paths.get(special_path)
+    if realpath is None:
+        raise ValueError("%s is not a valid root dir." % special_path)
+    else:
+        return os.path.join(realpath, *path.split("/"))
