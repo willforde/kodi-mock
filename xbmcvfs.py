@@ -7,8 +7,8 @@ import shutil
 import os
 
 # Other imports
-from addondev.utils import safe_path, kodi_paths
-from addondev.utils import ensure_native_str
+from addondev.utils import safe_path, ensure_native_str
+from addondev.support import kodi_paths
 
 __author__ = 'Team Kodi <http://kodi.tv>'
 __credits__ = 'Team Kodi'
